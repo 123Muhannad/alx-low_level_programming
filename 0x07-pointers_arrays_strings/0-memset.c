@@ -1,25 +1,26 @@
-#ifndef MAIN_H
-#define MAIN_H
-
-/**
- * File: main.h
- * Auth: Dev Nderitu
- *description: Header file containing prototypes for all functions
- * used in the0x07-pointers_arrays_strings directory
+/*
+ * File: 0-memset.c
+ * Auth: not
  */
 
+#include "main.h"
 
-#include <stdio.h>
-#include <stddef.h>
+/**
+*_memset - The _memset() function fills
+* the first n bytes of the memory area
+* pointed to by s with the constant byte b
+*@s:target
+*@b: constant byte
+*@n:number of byte
+*Return: returns new value of target
+*/
 
-void print_chessboard(char (*a)[8]);
-void print_diagsums(int *a, int size);
-void set_string(char **s, char *to);
-unsigned int _strspn(char *s, char *accept);
-int _putchar(char c);
-char *_memset(char *s, char b, unsigned int n);
-char *_memcpy(char *dest, char *src, unsigned int n);
-char *_strchr(char *s, char c);
-char *_strpbrk(char *s, char *accept);
-char *_strstr(char *haystack, char *needle);
-#endif /* MAIN_H */
+char *_memset(char *s, char b, unsigned int n)
+{
+	while (n)
+	{
+		s[n - 1] = b;
+		n--;
+	}
+	return (s);
+}
